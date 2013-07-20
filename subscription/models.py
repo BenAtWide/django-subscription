@@ -268,7 +268,7 @@ def unsubscribe_expired():
     Loops through all UserSubscription objects with `expires' field
     earlier than datetime.date.today() and forces correct group
     membership."""
-    for us in UserSubscription.objects.get(expires__lt=datetime.date.today()):
+    for us in UserSubscription.objects.filter(expires__lt=datetime.date.today()):
         us.fix()
 
 
