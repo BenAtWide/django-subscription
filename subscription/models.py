@@ -2,7 +2,6 @@ import datetime
 
 from django.conf import settings
 from django.db import models
-from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _, ungettext, ugettext_lazy
 
 from paypal.standard.ipn.models import PayPalIPN
