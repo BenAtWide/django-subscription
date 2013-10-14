@@ -50,6 +50,7 @@ class UserSubscriptionAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', _user, _subscription, 'active', 'expires', 'valid')
     list_display_links = ('__unicode__',)
     list_filter = ('active', 'subscription', )
+    raw_id_fields = ('user',)
     date_hierarchy = 'expires'
     form = UserSubscriptionAdminForm
     fieldsets = (
@@ -85,5 +86,5 @@ class TransactionAdmin(admin.ModelAdmin):
     date_hierarchy = 'timestamp'
     list_display = ('timestamp', 'id', 'event', _subscription, _user, _ipn, 'amount', 'comment')
     list_display_links = ('timestamp', 'id')
-    list_filter = ('subscription', 'user')
+    list_filter = ('subscription',)
 admin.site.register(Transaction, TransactionAdmin)
